@@ -33,6 +33,7 @@ body {
   padding: 10px 20px;
   font-weight: 500;
   letter-spacing: 2px;
+  text-decoration: underline;
 }
 .btn {
   height: fit-content;
@@ -46,6 +47,7 @@ body {
   background-color: rgba(254, 255, 197, 0.712);
   cursor: pointer;
   transition: transform 0.2s;
+  box-shadow: 0px 2px 10px 2px #c1c1c18c;
 }
 .btn:hover {
   transform: scale(1.1);
@@ -73,6 +75,8 @@ body {
   padding: 8px 20px;
   border-radius: 8px;
   background-color: #e1c5f8cc;
+  border: 1px solid rgba(219, 150, 219, 0.514);
+  box-shadow: 0px 2px 10px 2px #c1c1c18c;
 }
 .game-body {
   display: flex;
@@ -92,7 +96,6 @@ body {
   padding: 6px 8px;
   font-weight: 600;
   width: 80%;
-  margin: 8px auto;
   color: #7e7d7d;
   background-color: rgb(248, 247, 229);
 }
@@ -117,6 +120,20 @@ input[type="number"] {
   appearance: none;
 }
 
+.input-label {
+  width: 80%;
+  max-width: 200px;
+  margin: 0 0 2px 4px;
+  text-overflow: clip;
+}
+.input-label.mistake {
+  color: rgba(212, 75, 57, 0.863);
+}
+
+.hidden {
+  visibility: hidden;
+}
+
 .guess-btn {
   background-color: rgb(174, 248, 248);
   padding: 6px 8px;
@@ -127,16 +144,17 @@ input[type="number"] {
   flex-direction: column;
   align-items: flex-start;
   justify-content: space-around;
-  margin: 0 24px;
+  margin: 0 16px;
   font-weight: 400;
   font-size: larger;
   font-style: italic;
 }
-
 .game-status p {
-  letter-spacing: 1px;
+  padding: 4px 0;
 }
-
+.status-msg {
+  width: 12rem;
+}
 .status-msg.anim {
   animation: tekun 1s ease;
 }
