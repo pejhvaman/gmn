@@ -4,6 +4,15 @@
   box-sizing: border-box;
 }
 
+:root {
+  --primary-gradient: linear-gradient(to top left, purple, orange);
+  --secondary-gradient: linear-gradient(
+    to top left,
+    rgb(66, 0, 128),
+    rgb(247, 0, 255)
+  );
+}
+
 body {
   color: rgb(107, 107, 107);
   font-family: Arial, Helvetica, sans-serif;
@@ -12,7 +21,7 @@ body {
   align-items: center;
   justify-content: center;
   min-height: 100vh;
-  background: linear-gradient(to top left, purple, orange);
+  background: var(--primary-gradient);
 }
 
 .container {
@@ -37,7 +46,7 @@ body {
 }
 .btn {
   height: fit-content;
-  padding: 2px 4px;
+  padding: 4px 6px;
   font-size: small;
   font-weight: 400;
   letter-spacing: 1px;
@@ -78,6 +87,27 @@ body {
   border: 1px solid rgba(219, 150, 219, 0.514);
   box-shadow: 0px 2px 10px 2px #c1c1c18c;
 }
+.secret-num.success {
+  background-color: rgb(115, 173, 226);
+  color: aliceblue;
+  font-weight: 600;
+  animation: runama 1s linear;
+}
+
+@keyframes runama {
+  0% {
+    transform: scale(1);
+  }
+
+  50% {
+    transform: scale(1.2);
+  }
+
+  100% {
+    transform: scale(1);
+  }
+}
+
 .game-body {
   display: flex;
   margin: 32px 0;
@@ -93,11 +123,12 @@ body {
 #guess-num-input {
   border: 1px solid #c4c2c2;
   border-radius: 6px;
-  padding: 6px 8px;
+  padding: 8px 12px;
   font-weight: 600;
   width: 80%;
   color: #7e7d7d;
   background-color: rgb(248, 247, 229);
+  box-shadow: 0px 2px 10px 2px #c1c1c18c;
 }
 #guess-num-input::placeholder {
   font-size: smaller;
@@ -106,7 +137,7 @@ body {
 }
 #guess-num-input:focus {
   outline: unset;
-  border: 1px solid #c4c2c2;
+  border: 1px solid #b3b1b1;
 }
 
 input::-webkit-outer-spin-button,
@@ -129,14 +160,16 @@ input[type="number"] {
 .input-label.mistake {
   color: rgba(212, 75, 57, 0.863);
 }
-
+.input-label.anim {
+  animation: tekun 0.8s ease;
+}
 .hidden {
   visibility: hidden;
 }
 
 .guess-btn {
   background-color: rgb(174, 248, 248);
-  padding: 6px 8px;
+  padding: 8px 12px;
   margin: 16px 0;
 }
 .game-status {
@@ -152,8 +185,14 @@ input[type="number"] {
 .game-status p {
   padding: 4px 0;
 }
+.game-status p > span {
+  text-decoration: underline;
+}
+
 .status-msg {
   width: 12rem;
+  font-size: 0.8rem;
+  font-weight: 600;
 }
 .status-msg.anim {
   animation: tekun 1s ease;
